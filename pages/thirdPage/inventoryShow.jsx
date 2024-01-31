@@ -1,6 +1,6 @@
 
 
-export function LayoutShow(props) {
+export default function LayoutShow(props) {
     return(
        <div>
             {props.item.map((valor, index) => {
