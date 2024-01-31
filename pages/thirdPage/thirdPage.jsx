@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { get, post, deleteItem } from "../request";
 import { useEffect } from "react";
-import {LayoutShow} from './inventoryShow'
+import LayoutShow from './inventoryShow'
 import styles from "./thirdPage.module.css";
 
 export default function ThirdPage() {
