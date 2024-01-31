@@ -5,6 +5,7 @@
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
+  background: linear-gradient(to bottom left, #000000 0%, #563d61 100%);
 }
 
 .description {
@@ -106,6 +107,8 @@
 }
 
 .logo {
+  width: 100%;
+  height: 100%;
   position: relative;
 }
 /* Enable hover only on non-touch devices */
