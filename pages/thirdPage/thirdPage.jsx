@@ -6,7 +6,7 @@ import styles from "./thirdPage.module.css";
 
 export default function ThirdPage() {
   const [objeto, setObjeto] = useState([]);
-  const [ID, setIDs] = useState(0);
+  const [ID, setIDs] = useState();
   const [show, setShow] = useState();
   const [newItem, setNewItem] = useState(undefined);
   const [event, setEvent] = useState();

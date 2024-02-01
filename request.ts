@@ -4,7 +4,7 @@ export default async function fetchData(config: {
   id?: number;
 }): Promise<any> {
   try {
-    let url = "/pages/api/controller";
+    let url = "/api/controller";
     if (config.id) {
       url += `?id=${config.id}`;
     }

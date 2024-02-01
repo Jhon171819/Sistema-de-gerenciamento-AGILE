@@ -53,7 +53,7 @@ export default function Home() {
 
       <div className={styles.grid}>
         <a
-          href="http://localhost:3000/thirdPage/"
+          href="/thirdPage/"
           className={styles.card}
           target="_blank"
           rel="noopener noreferrer"
