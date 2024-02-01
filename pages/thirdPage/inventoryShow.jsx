@@ -1,6 +1,9 @@
 
 
 export default function LayoutShow(props) {
+    if (props.item  == undefined) {
+        return null
+    }
     return(
        <div>
             {props.item.map((valor, index) => {

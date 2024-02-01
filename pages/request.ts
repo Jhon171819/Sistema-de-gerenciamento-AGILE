@@ -1,4 +1,4 @@
-async function fetchData(config: {
+export default async function fetchData(config: {
   method: "GET" | "POST" | "DELETE";
   data?: Record<string, unknown>;
   id?: number;
@@ -32,4 +32,3 @@ async function fetchData(config: {
   }
 }
 
-export default fetchData;

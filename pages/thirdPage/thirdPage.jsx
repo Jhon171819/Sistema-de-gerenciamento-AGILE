@@ -10,13 +10,15 @@ export default function ThirdPage() {
   const [show, setShow] = useState();
   const [newItem, setNewItem] = useState(undefined);
   const [event, setEvent] = useState();
-
-  useEffect(() => {
-    setShow("Enviando...");
-    fetchData({ method: "POST", data: newItem });
-    getObj("*");
-  }, [newItem]);
-
+    useEffect(() => {
+      setShow("Enviando...");
+      if (newItem != undefined) {
+        fetchData({ method: "POST", data: newItem });
+        getObj("*");
+      }
+      console.log(newItem)
+    }, [newItem]);
+  
   async function getObj(item) {
     try {
       const result = await fetchData({ method: "GET" });
@@ -38,6 +40,7 @@ export default function ThirdPage() {
     const inputValue = e;
 
     if (objeto.length > 0) {
+      if (inputValue == '')
       setNewItem({
         id: objeto[objeto.length - 1].id + 1,
         nome: inputValue,
