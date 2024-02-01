@@ -1,12 +1,12 @@
 import { useState } from "react";
-import fetchData from "../request";
+import fetchData from "../../request";
 import { useEffect } from "react";
 import LayoutShow from "./inventoryShow";
 import styles from "./thirdPage.module.css";
 
 export default function ThirdPage() {
   const [objeto, setObjeto] = useState([]);
-  const [ID, setIDs] = useState();
+  const [ID, setIDs] = useState(0);
   const [show, setShow] = useState();
   const [newItem, setNewItem] = useState(undefined);
   const [event, setEvent] = useState();
