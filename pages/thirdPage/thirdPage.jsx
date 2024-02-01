@@ -1,31 +1,29 @@
 import { useState } from "react";
-import { get, post, deleteItem } from "../request";
+import fetchData from "../request";
 import { useEffect } from "react";
-import LayoutShow from './inventoryShow'
+import LayoutShow from "./inventoryShow";
 import styles from "./thirdPage.module.css";
 
 export default function ThirdPage() {
   const [objeto, setObjeto] = useState([]);
-  const [id, setIds] = useState();
+  const [ID, setIDs] = useState();
   const [show, setShow] = useState();
   const [newItem, setNewItem] = useState(undefined);
   const [event, setEvent] = useState();
 
   useEffect(() => {
     setShow("Enviando...");
-    post(newItem);
+    fetchData({ method: "POST", data: newItem });
     getObj("*");
   }, [newItem]);
 
   async function getObj(item) {
     try {
-      const result = await get();
-      // setObjeto(JSON.stringify(result, null, 2));
+      const result = await fetchData({ method: "GET" });
       if (item == "*") {
         setObjeto(result);
       } else {
         setObjeto(result[item]);
-        // setIds(result[item].id)
       }
     } catch (error) {
       console.error("Erro ao obter dados:", error);
@@ -38,31 +36,28 @@ export default function ThirdPage() {
 
   function handleInputChange(e) {
     const inputValue = e;
-    
+
     if (objeto.length > 0) {
       setNewItem({
-      id: objeto[objeto.length - 1].id + 1,
-      nome: inputValue,
-    });
+        id: objeto[objeto.length - 1].id + 1,
+        nome: inputValue,
+      });
     } else {
       setNewItem({
         id: 1,
         nome: inputValue,
-      })
+      });
     }
   }
 
   return (
     <>
       <div className={styles.container}>
-        <div className={styles.orgName}>
-          
-        </div>
+        <div className={styles.orgName}></div>
         <div className={styles.display}>
           <pre className={styles.displayView}>
-          <LayoutShow item={objeto}/>  
+            <LayoutShow item={objeto} />
           </pre>
-          
         </div>
         <div className={styles.buttons}>
           <div className={styles.button}>
@@ -95,12 +90,12 @@ export default function ThirdPage() {
             <input
               className={styles.input}
               type="number"
-              onChange={(e) => setIds(e.target.value)}
+              onChange={(e) => setIDs(e.target.value)}
             ></input>
             <button
               className={`${styles.custom_btn} ${styles.btn_7}`}
               onClick={() => {
-                deleteItem(id);
+                fetchData({ method: "DELETE", id: ID });
                 getObj("*");
               }}
             >

@@ -1,54 +1,35 @@
-export async function get() {
-    try {
-        const response = await fetch('/api/controller', {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        });
-
-        if (!response.ok) {
-            throw new Error(`Erro na requisição: ${response.status} - ${response.statusText}`);
-        }
-
-        const data = await response.json();
-        return data; // Retorna diretamente um array com os dados
-
-    } catch (error) {
-        console.error('Erro ao obter dados:', error);
-        throw error; // Rejogue o erro para que possa ser tratado onde a função 'get' é chamada
+async function fetchData(config: {
+  method: "GET" | "POST" | "DELETE";
+  data?: Record<string, unknown>;
+  id?: number;
+}): Promise<any> {
+  try {
+    let url = "/api/controller";
+    if (config.id) {
+      url += `?id=${config.id}`;
     }
-}
 
-export async function post(data: Record<string, unknown>) {
-    try {
-        const response = await fetch('/api/controller', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data),
-        });
-    
-        if (!response.ok && data != undefined) {
-          throw new Error(`Erro na requisição: ${response.status} - ${response.statusText}`);
-        }
-    
-        return await response.json();
-      } catch (error) {
-        console.error('Erro ao enviar dados:', error);
-        throw error; // Pode querer tratar o erro de outra forma
-      }
-}
-export async function deleteItem(e: number) {
-    const response = await fetch(`/api/controller?id=${e}`, {
-      method: "DELETE",
+    const requestOptions: RequestInit = {
+      method: config.method,
       headers: {
         "Content-Type": "application/json",
       },
-    });
-  
+      body: config.data ? JSON.stringify(config.data) : undefined,
+    };
+
+    const response = await fetch(url, requestOptions);
+
     if (!response.ok) {
-      throw new Error(`Id não encontrado: ${response.status} - ${response.statusText}`);
+      throw new Error(
+        `Erro na requisição: ${response.status} - ${response.statusText}`
+      );
     }
+
+    return await response.json();
+  } catch (error) {
+    console.error("Erro na requisição:", error);
+    throw error;
   }
+}
+
+export default fetchData;
