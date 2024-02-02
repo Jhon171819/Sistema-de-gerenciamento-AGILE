@@ -27,6 +27,7 @@ export default async function fetchData(config: {
 
     return await response.json();
   } catch (error) {
+    alert(`Erro na requisição ${error}`)
     console.error("Erro na requisição:", error);
     throw error;
   }

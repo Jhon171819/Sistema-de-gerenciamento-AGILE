@@ -42,6 +42,7 @@ export default function ThirdPage() {
   useEffect(() => {
     postObj(newItem)
     getObj('*')
+    console.log(objeto)
   }, [newItem])
 
   useEffect(() => {
