@@ -11,19 +11,19 @@ export default function Home() {
         </p> */}
         <div>
           <a
-            href="https://dggp7r92vqndl.cloudfront.net/"   
+            href="https://github.com/Jhon171819"   
             target="_blank"
             rel="noopener noreferrer"
           >
-            By{" "}
-            <Image
-              src="/logotipoEYON.svg"
+            By{" Jhon "}
+            {/* <Image
+              src="/11316.jpg"
               alt="Vercel Logo"
               className={styles.vercelLogo}
               width={100}
               height={24}
               priority
-            />
+            /> */}
             {/* <Image
               src="/pngwing.com.png"
               alt="Vercel Logo"
