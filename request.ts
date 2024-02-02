@@ -27,7 +27,6 @@ export default async function fetchData(config: {
 
     return await response.json();
   } catch (error) {
-    alert(`Projeto em desenvolvimento inicial`)
     console.error("Erro na requisição:", error);
     throw error;
   }

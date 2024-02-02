@@ -5,10 +5,6 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.description}>
-        {/* <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p> */}
         <div>
           <a
             href="https://github.com/Jhon171819"   
@@ -16,23 +12,7 @@ export default function Home() {
             rel="noopener noreferrer"
           >
             By{" Jhon "}
-            {/* <Image
-              src="/11316.jpg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            /> */}
-            {/* <Image
-              src="/pngwing.com.png"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            /> */}
-           
+          
           </a>
         </div>
       </div>
@@ -47,8 +27,7 @@ export default function Home() {
           priority
         />
 
-        
-        {/* <img src={logo} height={100} width={100}></img> */}
+       
       </div>
 
       <div className={styles.grid}>
