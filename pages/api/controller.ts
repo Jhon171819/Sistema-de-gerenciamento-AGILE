@@ -7,16 +7,7 @@ interface IItems {
   nome: string;
 }
 
-// const Items: IItems[] = [
-//   {
-//     id: 1,
-//     nome: "batata",
-//   },
-//   {
-//     id: 2,
-//     nome: "cenoura",
-//   },
-// ];
+
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
     const {id} = req.query
@@ -49,5 +40,5 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     } else {
       res.status(404).json({ error: 'Item not found' });
     }
-    }
+  }
 }

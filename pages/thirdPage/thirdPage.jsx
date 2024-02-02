@@ -10,15 +10,22 @@ export default function ThirdPage() {
   const [show, setShow] = useState();
   const [newItem, setNewItem] = useState(undefined);
   const [event, setEvent] = useState();
-    useEffect(() => {
-      setShow("Enviando...");
-      if (newItem != undefined) {
-        fetchData({ method: "POST", data: newItem });
-        getObj("*");
-      }
-      console.log(newItem)
-    }, [newItem]);
+
+  async function postObj(item) {
+    const dados = item
+
+    try {
+      // Chame a função para realizar o POST
+      const resposta = await fetchData({method: 'POST', data: dados});
   
+      // Faça algo com a resposta, se necessário
+      console.log('Resposta recebida:', resposta);
+    } catch (erro) {
+      // Trate qualquer erro ocorrido durante a requisição
+      console.error('Erro ao realizar o POST:', erro);
+    }
+  }
+
   async function getObj(item) {
     try {
       const result = await fetchData({ method: "GET" });
@@ -33,6 +40,11 @@ export default function ThirdPage() {
     }
   }
   useEffect(() => {
+    postObj(newItem)
+    getObj('*')
+  }, [newItem])
+
+  useEffect(() => {
     setShow(JSON.stringify(objeto));
   }, [objeto]);
 
@@ -40,11 +52,12 @@ export default function ThirdPage() {
     const inputValue = e;
 
     if (objeto.length > 0) {
-      if (inputValue == '')
       setNewItem({
-        id: objeto[objeto.length - 1].id + 1,
+        id: objeto.length +1 ,
         nome: inputValue,
       });
+      console.log(objeto.length)
+
     } else {
       setNewItem({
         id: 1,

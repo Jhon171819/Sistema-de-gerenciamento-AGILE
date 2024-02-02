@@ -11,7 +11,7 @@ export default function Home() {
         </p> */}
         <div>
           <a
-            href="https://dggp7r92vqndl.cloudfront.net/"
+            href="https://dggp7r92vqndl.cloudfront.net/"   
             target="_blank"
             rel="noopener noreferrer"
           >
