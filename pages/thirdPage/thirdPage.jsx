@@ -20,12 +20,9 @@ export default function ThirdPage() {
     const dados = item
 
     try {
-      // Chame a função para realizar o POST
       const resposta = await fetchData({method: 'POST', data: dados});
   
-      // Faça algo com a resposta, se necessário
     } catch (erro) {
-      // Trate qualquer erro ocorrido durante a requisição
       console.error('Erro ao realizar o POST:', erro);
     }
   }
@@ -41,28 +38,6 @@ export default function ThirdPage() {
     } catch (error) {
       console.error("Erro ao obter dados:", error);
       setObjeto("Erro ao obter dados.");
-    }
-  }
-  useEffect(() => {
-    postObj(newItem)
-    getObj('*')
-  }, [newItem])
-
-
-  function handleInputChange(e) {
-    const inputValue = e;
-
-    if (objeto.length > 0) {
-      setNewItem({
-        id: objeto.length +1 ,
-        nome: inputValue,
-      });
-
-    } else {
-      setNewItem({
-        id: 1,
-        nome: inputValue,
-      });
     }
   }
 
@@ -93,11 +68,25 @@ export default function ThirdPage() {
               className={styles.input}
               type="text"
               //   placeholder="Insira um item"
-              onChange={(e) => setEvent(e.target.value)}
+              onChange={(e) => {
+                objeto.length > 0?
+                setNewItem({
+                id: objeto.length +1 ,
+                nome: e.target.value,
+              })
+              :
+              setNewItem({
+                id: 1,
+                nome: e.target.value,
+              });
+            }}
             />
             <button
               className={`${styles.custom_btn} ${styles.btn_7}`}
-              onClick={() => handleInputChange(event)}
+              onClick={() => {
+                postObj(newItem)
+                getObj('*')
+              }}
             >
               <span>ENVIAR</span>
             </button>
