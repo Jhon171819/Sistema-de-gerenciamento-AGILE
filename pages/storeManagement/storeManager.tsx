@@ -1,5 +1,5 @@
 import styles from "./storeManager.module.css";
-import { TableCustom } from "./components/gridTable";
+import TableCustom  from "./components/gridTable";
 import { useEffect, useState } from "react";
 import fetchData from "@/request";
 
@@ -29,7 +29,7 @@ export default function StoreManager() {
   }
  const head: {id: number[]}[] = [{id: data.map((objeto: DataItem) => objeto.id)}]
  const body:{ content: string[] }[] = [{content: data.map((objeto: DataItem) => objeto.nome)}]
- 
+
  const props = {
   head: head,
   body: body
