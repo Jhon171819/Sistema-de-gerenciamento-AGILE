@@ -1,0 +1,91 @@
+.sideBar {
+    background: rgb(2,2,79);
+    background: linear-gradient(to bottom left,#563d6167 100%, #000000 0%);
+    height: 100%;
+    max-width: 130px;
+    width: 130px;
+    left: 0;
+    top: 0;
+    /* padding-top: 20px; */
+    bottom: 0;
+    /* display: block; */
+    /* right: 3; */
+    position: fixed;
+    z-index: 10;
+    transition-duration: 0.5s;
+    border-radius: 20px;
+    border-color: #cc255d;
+    --callout-rgb: 238, 240, 241;
+    --callout-border-rgb: 172, 175, 176;
+    --card-rgb: 180, 185, 188;
+    --card-border-rgb: 131, 134, 135;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(25%, auto));
+    max-width: 100%;
+    width: 1100px;
+}
+
+.code {
+    font-weight: 700;
+    font-family: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;;
+}
+  
+.card {
+    text-decoration: none;
+    padding: 1rem 1.2rem;
+    border-radius: 12px;
+    background: rgba(rgb(180, 185, 188) 0);
+    border: 1px solid rgba(131, 134, 135, 0.007);
+    transition: background 200ms, border 200ms;
+    color: bisque;
+    font-family: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono";
+    font-size: large;
+    font-style: italic;
+    font-weight: bold;
+    /* margin: 10px; */
+  }
+  
+.card span {
+    display: inline-block;
+    transition: transform 200ms;
+  }
+  
+  .card h2 {
+    font-weight: 600;
+    margin-bottom: 0.7rem;
+  }
+  
+  .card p {
+    margin: 0;
+    opacity: 0.6;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    max-width: 30ch;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .card:hover {
+      background: rgba(var(--card-rgb), 0.1);
+      border: 1px solid rgba(var(--card-border-rgb), 0.15);
+    }
+  
+    .card:hover span {
+      transform: translateX(4px);
+    }
+  }
+  
+  @media (prefers-reduced-motion) {
+    .card:hover span {
+      transform: none;
+    }
+  }
+  
+
+
+
+

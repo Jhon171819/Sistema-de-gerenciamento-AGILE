@@ -1,0 +1,27 @@
+.father {
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    background: linear-gradient(to bottom left, #000000 0%, #563d61 100%);  
+    position: fixed;
+    margin-left: -8px;
+    margin-top: 0px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: whitesmoke;
+    align-items: center;
+}
+
+.table {
+    border: 1;
+    color:rgb(255, 255, 255);
+    border-color: rgb(0, 0, 0);
+}

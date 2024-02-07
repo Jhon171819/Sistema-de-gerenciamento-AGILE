@@ -102,6 +102,22 @@ a {
   text-decoration: none;
 }
 
+.sideBar {
+  background: linear-gradient(to bottom left, #00000036 0%, #83039c3a 100%);
+  height: 100%;
+  max-width: 130px;
+  width: 130px;
+  left: 0;
+  padding-top: 70px;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  transition-duration: 0.5s;
+  border-radius: 20px;
+  border-color: #cc255d;
+}
+
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

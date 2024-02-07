@@ -20,7 +20,7 @@ export default function Home() {
       <div className={styles.center}>
         <Image
           className={styles.logo}
-          src="/pngwing.com.png"
+          src="/logotipoEYON.svg"
           alt="Next.js Logo"
           width={180}
           height={37}
@@ -31,17 +31,7 @@ export default function Home() {
       </div>
 
       <div className={styles.grid}>
-        <a
-          href="/thirdPage/"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Cadastro <span>-&gt;</span>
-          </h2>
-          <p>Realize o cadastro de seu estoque</p>
-        </a> 
+        
 
 
 
