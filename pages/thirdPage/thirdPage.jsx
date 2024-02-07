@@ -7,9 +7,14 @@ import styles from "./thirdPage.module.css";
 export default function ThirdPage() {
   const [objeto, setObjeto] = useState([]);
   const [ID, setIDs] = useState();
-  const [show, setShow] = useState();
+  const [show, setShow] = useState(undefined);
   const [newItem, setNewItem] = useState(undefined);
   const [event, setEvent] = useState();
+
+  useEffect(() => {
+    setShow(objeto);
+  }, [objeto]);
+
 
   async function postObj(item) {
     const dados = item
@@ -43,9 +48,6 @@ export default function ThirdPage() {
     getObj('*')
   }, [newItem])
 
-  useEffect(() => {
-    setShow(JSON.stringify(objeto));
-  }, [objeto]);
 
   function handleInputChange(e) {
     const inputValue = e;
@@ -70,7 +72,7 @@ export default function ThirdPage() {
         <div className={styles.orgName}></div>
         <div className={styles.display}>
           <pre className={styles.displayView}>
-            <LayoutShow item={objeto} />
+            <LayoutShow item={show} />
           </pre>
         </div>
         <div className={styles.buttons}>
