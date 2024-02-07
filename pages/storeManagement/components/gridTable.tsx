@@ -6,7 +6,7 @@ interface TableProps {
   body: { content: string[] }[];
 }
 
-export function TableCustom(props: TableProps): JSX.Element {
+export default function TableCustom(props: TableProps): JSX.Element {
   if (!props.head || !props.body) {
     return <div>Tabela vazia</div>;
   }
