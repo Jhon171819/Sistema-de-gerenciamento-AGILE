@@ -2,8 +2,9 @@ import Table from 'react-bootstrap/Table';
 import styles from '../storeManager.module.css';
 
 interface TableProps {
-  head: { id: string[] }[];
-  body: { content: string[] }[];}
+  head: { id: number[] }[];
+  body: { content: string[] }[];
+}
 
 export function TableCustom(props: TableProps): JSX.Element {
   if (!props.head || !props.body) {
