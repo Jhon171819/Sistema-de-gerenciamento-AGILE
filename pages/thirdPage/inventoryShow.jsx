@@ -1,7 +1,7 @@
 
 
 export default function LayoutShow(props) {
-    if (props.item  == undefined) {
+    if (props.item  == undefined || "") {
         return <p>Nada aqui</p>
     }
     return(

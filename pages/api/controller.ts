@@ -15,7 +15,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     try {
       const { id, nome } = req.body
 
-      if (!id || typeof nome !== "string") {
+      if (!id || !nome || typeof nome !== "string") {
         res.status(400).json({ error: "ID e nome são obrigatórios para adicionar um item." });
         return;
       }
