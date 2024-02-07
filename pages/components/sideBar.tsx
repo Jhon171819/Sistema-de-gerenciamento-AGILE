@@ -30,7 +30,7 @@ export default function SideBar(): JSX.Element {
         </div>
         <div>
           <a href="/storeManagement/" className={styles.card}>
-             <span>Adm loja	<str>&rarr;</str></span>
+             <span>Adm loja &rarr;</span>
           </a>
         </div>
     </div>
