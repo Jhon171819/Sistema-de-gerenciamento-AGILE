@@ -1,17 +1,28 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { Items } from "./data/items";
-
+import {partners} from "./data/partners"
+// interface IPartners {
+//   name: string
+// }
 interface IItems {
   id: number;
   nome: string;
 }
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  const { id } = req.query;
+  const { query, id } = req.query;
+  const optionsPartner = partners.map(element => ({ label: element.name, value: element.value }));
+  
+  if(req.method === "GET" && query){
+    switch (query){
+      case "items":
+        res.json(Items)
+      case "partners":
 
-  if (req.method === "GET") {
-    res.json(Items);
-  } else if (req.method === "POST") {
+        res.json(optionsPartner) 
+    }
+  }
+  else if (req.method === "POST") {
     try {
       const { id, nome } = req.body
 

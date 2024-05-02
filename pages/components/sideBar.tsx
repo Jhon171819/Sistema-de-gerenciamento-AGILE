@@ -24,7 +24,7 @@ export default function SideBar(): JSX.Element {
           </a>
         </div>
         <div style={divStyle}>
-          <a href="/thirdPage/" className={styles.card}>
+          <a href="/cadastroProdutos/" className={styles.card}>
           <span>Cadastro &rarr;</span>
           </a>
         </div>

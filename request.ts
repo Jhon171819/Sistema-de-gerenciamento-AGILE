@@ -1,13 +1,15 @@
 export default async function fetchData(config: {
   method: "GET" | "POST" | "DELETE";
   data?: Record<string, unknown>;
-  id?: number;
+  query: unknown;
+  id?: number
 }): Promise<any> {
+
   try {
-    let url = "/api/controller";
+    let url = `/api/controller/?query=${config.query}`;
     if (config.id) {
-      url += `?id=${config.id}`;
-    }
+      url += `?query=${config.query}/?id=${config.id}`;
+    } 
 
     const requestOptions: RequestInit = {
       method: config.method,

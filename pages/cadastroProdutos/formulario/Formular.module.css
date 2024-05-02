@@ -1,3 +1,26 @@
+
+.form {
+  background-color: transparent;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 30%;
+}
+.form .item {
+  margin: 20px;
+}
+
+.header {
+  margin-left: 30%;
+  align-items: center;
+}
+
+.page{
+  background-color: transparent;
+}
+
+
 .display {
   width: 80%;
   height: fit-content;

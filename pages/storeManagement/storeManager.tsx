@@ -20,7 +20,7 @@ export default function StoreManager() {
 
   async function getObj() {
     try {
-      const result = await fetchData({ method: "GET" });
+      const result = await fetchData({ method: "GET", query: "items" });
         setData(result);
         console.log(data)
     } catch (error) {
