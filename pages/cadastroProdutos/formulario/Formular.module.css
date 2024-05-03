@@ -7,10 +7,27 @@
   justify-content: center;
   margin-left: 30%;
 }
-.form .item {
-  margin: 20px;
+
+.text {
+    margin: 10px;
+    height : 18px;
+    width : 286.25px;
+    border : 1px solid #726A5D;
+    /* padding : 6px 12px 6px 12px; */
+}
+.select {
+  margin: 10px;
+  height : 28px;
+  width : 346.25px;
+  border : 1px solid #726A5D;
+  padding : 6px 12px 6px 12px;
 }
 
+.number {
+  margin: 10px;
+  height:18px;
+  width: 100px;
+}
 .header {
   margin-left: 30%;
   align-items: center;

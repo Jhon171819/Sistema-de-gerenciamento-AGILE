@@ -8,10 +8,10 @@ interface layoutProps {
 
 export default function Layout ({children}: layoutProps) {
     return(
-        <div className={styles.app}>
-        <div className={styles.sideBar}>
+        <div>
+        {/* <div className={styles.sideBar}>
             <SideBar />
-        </div>
+        </div> */}
         {children}
 
         </div>

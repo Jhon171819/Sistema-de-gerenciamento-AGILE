@@ -1,12 +1,8 @@
 import { useState } from "react";
-import fetchData from "../../../request";
 import { useEffect } from "react";
-import LayoutShow from "./inventoryShow";
-import styles from "./Formular.module.css";
-import { Form, Layout, Typography } from "antd";
-const {Title} = Typography
-const {Header, Content, Footer} = Layout
-import {ProductForm} from "./utils"
+import GenericForm from '../../components/form'
+import styles from "./Formular.module.css"
+
 
 export default function FormularioProdutos() {
   const [objeto, setObjeto] = useState([]);
@@ -19,16 +15,17 @@ export default function FormularioProdutos() {
     setShow(objeto);
   }, [objeto]);
 
+  const fields = [
+    {label: "Nome do produto", type: "text", style: styles.text},
+    {label: "Nome do Fornecedor", type: "select", style: styles.select},
+    {label: "Quantidade em estoque", type: "number", style: styles.number},
+    {label: "Valor do produto", type: "number", style: styles.number, prefix: 'R$'}
+  ]
+
   return (
     <>
-      <Layout className={styles.page}> 
-        <div className={styles.header}>
-          <Title>Criar novo produto</Title>
-        </div>
-        <Content style={{backgroundColor: "transparent"}}>
-          <ProductForm />
-        </Content>
-      </Layout>
+      <div style={{display: "flex",justifyContent: "center",alignItems: "center"}}> <h1>Cadastro de produto</h1> </div>
+      <GenericForm fields={fields}/>
     </>
   );
 }

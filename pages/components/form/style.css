@@ -1,0 +1,32 @@
+/* Estilos personalizados para o formulário */
+.Form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container {
+    max-width: 600px;
+}
+
+.form-group .label {
+    font-weight: bold;
+    font-size: larger;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.form-control {
+    height : 38px;
+    width : 586.25px;
+    border : 1px solid #726A5D;
+    padding : 6px 12px 6px 12px;
+}
+
+.btn-primary {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+.btn-primary:hover {
+    background-color: #0069d9;
+    border-color: #0056b3;
+}
