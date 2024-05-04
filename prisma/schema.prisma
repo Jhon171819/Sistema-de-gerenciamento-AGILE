@@ -1,0 +1,89 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Produto {
+  id_produto    Int          @id
+  id_fornecedor Int
+  nome_produto  String
+  descricao     String?
+  qtd_estoque   Int
+  preco         Float
+  fornecedor    Fornecedor   @relation(fields: [id_fornecedor], references: [id_fornecedor])
+  ItemCompra    ItemCompra[]
+  ItemVenda     ItemVenda[]
+}
+
+model Fornecedor {
+  id_fornecedor    Int       @id
+  nome_fornecedor  String
+  rua              String
+  bairro           String
+  cidade           String
+  estado           String
+  cep              Int
+  email            String
+  telefone_celular BigInt
+  produtos         Produto[]
+  Compra           Compra[]
+}
+
+model Cliente {
+  id_cliente       Int     @id
+  nome             String
+  cep              Int
+  rua              String
+  bairro           String
+  cidade           String
+  estado           String
+  email            String
+  telefone_celular BigInt
+  Venda            Venda[]
+}
+
+model Compra {
+  id_compra     Int          @id
+  id_fornecedor Int
+  data_compra   String
+  fornecedor    Fornecedor   @relation(fields: [id_fornecedor], references: [id_fornecedor])
+  itens_compra  ItemCompra[]
+}
+
+model ItemCompra {
+  id_item_compra Int     @id
+  id_produto     Int
+  id_compra      Int
+  valor_unitario Float
+  quantidade     Int
+  produto        Produto @relation(fields: [id_produto], references: [id_produto])
+  compra         Compra  @relation(fields: [id_compra], references: [id_compra])
+}
+
+model Venda {
+  id_venda    Int         @id
+  id_cliente  Int
+  data_venda  String
+  cliente     Cliente     @relation(fields: [id_cliente], references: [id_cliente])
+  itens_venda ItemVenda[]
+}
+
+model ItemVenda {
+  id_item_venda  Int     @id
+  id_produto     Int
+  id_venda       Int
+  valor_unitario Float
+  quantidade     Int
+  produto        Produto @relation(fields: [id_produto], references: [id_produto])
+  venda          Venda   @relation(fields: [id_venda], references: [id_venda])
+}

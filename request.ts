@@ -1,7 +1,7 @@
 export default async function fetchData(config: {
     method: "GET" | "POST" | "DELETE";
     data?: Record<string, unknown>;
-    entity: "produtos" | "fornecedores"; 
+    entity: "cliente" | "compra" | "fornecedores" | "itemCompra" | "itemVenda" | "produto" | "venda"; 
     query?: string;
     id?: number;
   }): Promise<any> {
@@ -12,7 +12,7 @@ export default async function fetchData(config: {
       if (config.query) {
         url += `?query=${config.query}`;
       }
-      
+
       if (config.id) {
         url += `/${config.id}`;
       }
