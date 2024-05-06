@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import GenericForm from '../../components/form'
 import styles from "./Formular.module.css"
-import {getPartners} from '../../../utils/utils'
+import {getPartners} from '../../../utils/utils.ts'
 import fetchData from "@/request";
 
 

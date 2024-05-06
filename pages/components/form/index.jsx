@@ -3,6 +3,8 @@ import Form from 'react-bootstrap/Form';
 import "./style.css"
 import fetchData from '@/request';
 import { useState } from 'react';
+import {postObj} from '../../../utils/utils.ts'
+
 
 export default function GenericForm({fields, entity}){
     const [body, setBody] = useState()
@@ -29,8 +31,8 @@ export default function GenericForm({fields, entity}){
               </Form.Group>
             ))}
           </div>
-        
-          <Button variant='primary' className='btn-primary' onClick={() => fetchData({method: "POST", entity: entity, data: body})}>Criar</Button>
+
+          <Button variant='primary' className='btn-primary' onClick={() => postObj({})}>Criar</Button>
         </Form>
     )
 }
