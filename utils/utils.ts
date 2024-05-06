@@ -12,7 +12,6 @@ export function gerarUuid(): string {
 export async function getPartners(): Promise<any> {
   try {
     const response = await fetchData({ method: 'GET', entity: 'fornecedores' });
-    console.log(response);
     return response;
   } catch (error) {
     console.error("Erro ao obter dados:", error);
@@ -27,11 +26,13 @@ interface Product{
   descricao: string;
   qtd_estoque: number;
   preco: number;
+  [key: string]: unknown;
 }
 
-export async function postObj({productData: Product}): Promise<void> {
+export async function postObj(productData: Product, endPoint: "cliente" | "compra" | "fornecedores" | "itemCompra" | "itemVenda" | "produtos" | "venda"): Promise<void> {
   try {
-    const resposta = await fetchData({ method: 'POST', data: productData, entity:'fornecedores' });
+    const entity: Record<string, unknown> = {...productData}
+    const resposta = await fetchData({ method: 'POST', data: productData, entity: endPoint });
     console.log(resposta);
   } catch (error) {
     console.error('Erro ao realizar o POST:', error);

@@ -7,7 +7,8 @@ export default async function fetchData(config: {
   }): Promise<any> {
     try {
       let url = `/api/${config.entity}`; 
-  
+
+      console.log(config.data)
 
       if (config.query) {
         url += `?query=${config.query}`;
