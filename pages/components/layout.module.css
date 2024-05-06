@@ -1,4 +1,8 @@
-
+.app {
+  background-image: radial-gradient(circle, #051937, #001e2f, #001f22, #0f1e18, #1a1c18);
+  width: 99vw;   /* 100% da largura da viewport */
+  height: 99vh;  /* 100% da altura da viewport */
+}
 
 .sideBar {
     background: rgb(2,2,79);

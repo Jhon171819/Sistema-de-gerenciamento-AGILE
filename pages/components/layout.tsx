@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import styles from './sideBar.module.css'
+import styles from './layout.module.css'
 import SideBar from "./sideBar";
 
 interface layoutProps {
@@ -8,7 +8,7 @@ interface layoutProps {
 
 export default function Layout ({children}: layoutProps) {
     return(
-        <div>
+        <div className={styles.app}>
         {/* <div className={styles.sideBar}>
             <SideBar />
         </div> */}

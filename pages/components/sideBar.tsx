@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import styles from './sideBar.module.css'
+import styles from './layout.module.css'
 
 const divStyle = {
   marginBottom: '20px',
