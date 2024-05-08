@@ -1,5 +1,6 @@
 import fetchData from '@/request';
 import { Decimal } from '@prisma/client/runtime/library';
+import axios from 'axios';
 
 export function gerarUuid(): string {
   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
@@ -7,6 +8,11 @@ export function gerarUuid(): string {
     const v = c === 'x' ? r : (r & 0x3) | 0x8;
     return v.toString(16);
   });
+}
+
+export async function getCep(cep: number){
+  return axios.get(`https://viacep.com.br/ws/${cep}/json/`)
+  .catch(e => alert(e))
 }
 
 export async function getPartners(): Promise<any> {
@@ -28,7 +34,20 @@ interface Product{
   preco: number;
   [key: string]: unknown;
 }
+const generatedIds = new Set();
 
+export function gerarIdProdutoUnico() {
+  const MIN_ID = 100000;
+  const MAX_ID = 999999;
+
+  let id: number;
+  do {
+    id = Math.floor(Math.random() * (MAX_ID - MIN_ID + 1)) + MIN_ID;
+  } while (generatedIds.has(id));
+
+  generatedIds.add(id);
+  return id;
+}
 export async function postObj(productData: Product, endPoint: "cliente" | "compra" | "fornecedores" | "itemCompra" | "itemVenda" | "produtos" | "venda"): Promise<void> {
   try {
     const entity: Record<string, unknown> = {...productData}

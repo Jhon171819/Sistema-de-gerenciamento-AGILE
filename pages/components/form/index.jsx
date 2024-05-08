@@ -1,41 +1,134 @@
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import "./style.css"
-import { useEffect, useState } from 'react';
-import {postObj} from '../../../utils/utils.ts'
+import React, { useEffect, useState } from "react";
+import Button from "react-bootstrap/Button";
+import InputMask from "react-input-mask";
+import Form from "react-bootstrap/Form";
+import { Col, Row } from "react-bootstrap";
+import "./style.css";
+import { gerarIdProdutoUnico, postObj } from "../../../utils/utils.ts";
 
+export default function GenericForm({
+    fields,
+    entity,
+    idControl,
+    formatSaveEntity,
+    ignoreList
+}) {
+    const [body, setBody] = useState({});
+    const [rows, setRows] = useState([]);
 
-export default function GenericForm({fields, entity, idControl}){
-    const [body, setBody] = useState()
-    useEffect(() => {setBody({...body, [idControl]: crypto.randomUUID() })},[])
-    return(
-        <Form className='Form'>
-          <div className='container'>
-            {fields?.map((item) => (
-              <Form.Group className='form-group' key={item.label}>
-                <Form.Label className='label'>{`${item.label}: `}</Form.Label>
-                {item.type === 'select' && item.options ? (
-                  <Form.Select onChange={(value) => {
-                    console.log(value.target.value)
-                    setBody({...body, [item.control]: value.target.value})}}>
-                    {Array.isArray(item.options) ? item.options.map((option, index) => (
-                      <option key={index} value={option.value}>{option.label}</option>
-                    )) : null}
+    useEffect(() => {
+        setBody({ ...body, [idControl]: gerarIdProdutoUnico() });
+    }, [idControl]);
+
+    function handleChange(value, control) {
+        setBody({
+            ...body,
+            [control]: value,
+        });
+    }
+
+    function lackingKeysError() {
+        fields.forEach((element) => {
+            if (!body[element.control] && ignoreList.includes(element.control) === false ) {
+                alert(`Está faltando preencher ${element.label}`);
+                return;
+            }
+        });
+    }
+
+    useEffect(() => {
+      const newRows = [];
+      let currentRow = [];
+      let counter = 0;
+
+      fields.forEach((item) => {
+          const { label, type, control, mask, prefix, options, style, disabled, colSize } = item;
+
+          let field;
+          if (type === "select" && options) {
+              field = (
+                  <Form.Select
+                      className={type}
+                      onChange={(e) => handleChange(e.target.value, control)}
+                  >
+                      {options.map((option, index) => (
+                          <option key={index} value={option.value}>
+                              {option.label}
+                          </option>
+                      ))}
                   </Form.Select>
-                ) : (
+              );
+          } else if (mask) {
+              field = (
+                  <InputMask
+                      mask={mask}
+                      // maskChar="_"
+                      // value={body[control]}
+                      onChange={(e) => {console.log(e.target.value); handleChange(e.target.value.replace(/[-.]/g, ""), control)}}
+                  >
+                      {(inputProps) => (
+                          <Form.Control
+                              type={type}
+                              prefix={prefix || null}
+                              placeholder={`Insira ${label}`}
+                              {...inputProps}
+                          />
+                      )}
+                  </InputMask>
+              );
+          } else {
+              field = (
                   <Form.Control
-                    className={item.style}
-                    type={item.type}
-                    prefix={item.prefix ? item.prefix : null}
-                    placeholder={`insira o ${item.label}`}
-                    onChange={(value) => setBody({...body, [item.control]: value.target.value})}
+                      className={type}
+                      disabled={disabled}
+                      type={type}
+                      prefix={prefix || null}
+                      placeholder={`Insira ${label}`}
+                      onChange={(e) => handleChange(e.target.value, control)}
                   />
-                )}
-              </Form.Group>
-            ))}
+              );
+          }
+
+          currentRow.push(
+              <Col {...colSize} key={control}>
+                  <Form.Group controlId={`formGrid${label}`}>
+                      <Form.Label>{label}: </Form.Label>
+                      {field}
+                  </Form.Group>
+              </Col>
+          );
+
+          counter++;
+          if (counter % 2 === 0 || fields.length === counter) {
+              newRows.push(
+                  <Row key={counter}>
+                      {currentRow}
+                  </Row>
+              );
+              currentRow = [];
+          }
+      });
+
+      setRows(newRows);
+  }, [body, fields]);
+
+  return (
+      <Form className="Form">
+          <div className="container">
+              {rows}
           </div>
 
-          <Button variant='primary' className='btn-primary' onClick={() => postObj({...body}, entity)}>Criar</Button>
+              <Button
+                  variant="primary"
+                  className="btn-primary"
+                  onClick={() => {
+                      Object.keys(body).length === fields.length - ignoreList.length + 1
+                          ? postObj({ ...formatSaveEntity(body) }, entity)
+                          : lackingKeysError();
+                  }}
+              >
+                  Criar
+              </Button>
         </Form>
-    )
+    );
 }

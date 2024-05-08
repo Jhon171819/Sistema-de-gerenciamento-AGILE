@@ -1,32 +1,48 @@
-/* Estilos personalizados para o formulário */
 .Form {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.container {
-    max-width: 600px;
+    flex-direction: column; /* Alterado de column para row */
+    flex-wrap: wrap; /* Permite que os itens sejam envolvidos em várias linhas */
+    align-items: center; /* Alinha os itens ao início do contêiner */
+    max-width: 100%; /* Ajustado para ocupar a largura total */
+    justify-content: space-between; /* Espaçamento entre os itens */
 }
 
 .form-group .label {
     font-weight: bold;
     font-size: larger;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-bottom: 10px;
 }
 
-.form-control {
-    height : 38px;
-    width : 586.25px;
-    border : 1px solid #726A5D;
-    padding : 6px 12px 6px 12px;
+.form-control, .select {
+    height: 38px;
+    width: fit-content; /* Ajustado para metade da largura com margem */
+    border: 1px solid #726A5D;
+    padding: 6px 12px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.number, .tel {
+    width:fit-content; /* Ajustado para um quarto da largura com margem */
+    margin-right: 10px;
 }
 
 .btn-primary {
     background-color: #0056b3;
     border-color: #004085;
+    color: white;
+    /* width: calc(100% - 20px); Ajustado para ocupar a largura total com margem */
+    margin-top: 10px;
 }
 
 .btn-primary:hover {
     background-color: #0069d9;
     border-color: #0056b3;
+}
+
+.footer {
+    display: flex;
+    flex-direction: initial;
+    max-width: 60px;
 }
