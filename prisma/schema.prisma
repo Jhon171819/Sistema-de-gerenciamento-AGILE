@@ -67,7 +67,7 @@ model ItemCompra {
   valor_unitario Float
   quantidade     Int
   produto        Produto @relation(fields: [id_produto], references: [id_produto])
-  compra         Compra  @relation(fields: [id_compra], references: [id_compra])
+  compra         Compra  @relation(fields: [id_compra], references: [id_compra], onDelete: Cascade)
 }
 
 model Venda {
@@ -85,5 +85,5 @@ model ItemVenda {
   valor_unitario Float
   quantidade     Int
   produto        Produto @relation(fields: [id_produto], references: [id_produto])
-  venda          Venda   @relation(fields: [id_venda], references: [id_venda])
+  venda          Venda   @relation(fields: [id_venda], references: [id_venda], onDelete: Cascade)
 }
