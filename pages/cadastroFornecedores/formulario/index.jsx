@@ -1,6 +1,5 @@
-import { getCep } from '../../../utils/utils';
 import GenericForm from '../../components/form'
-
+import "./Formulario.module.css"
 export default function FormularioFornecedores() {
     const ignoreList = ["rua", "bairro", "cidade", "estado"]
     const fields = [
@@ -13,25 +12,21 @@ export default function FormularioFornecedores() {
             label: "Rua do fornecedor",
             type: "text",
             control: "rua",
-            disabled: true,
         },
         {
             label: "Bairro do fornecedor",
             type: "text",
             control: "bairro",
-            disabled: true,
         },
         {
             label: "Cidade do fornecedor",
             type: "text",
             control: "cidade",
-            disabled: true,
         },
         {
             label: "Estado do fornecedor",
             type: "text",
             control: "estado",
-            disabled: true,
         },
         {
             label: "CEP do fornecedor",
@@ -52,20 +47,12 @@ export default function FormularioFornecedores() {
         },
     ];
     function formatToSave(entity) {
-        console.log(entity)
-        entity.cep = parseInt(entity.cep);
-        getCep(entity.cep).then((response) => {
-            entity.bairro = response.bairro
-            entity.cidade = response.localidade
-            entity.rua = response.logradouro
-            entity.estado = response.uf
-        })
-        entity.telefone_celular = parseInt(entity.telefone_celular);
-        entity.id_fornecedor = parseInt(entity.id_fornecedor);
-        if (!entity.id_fornecedor) {
-            alert("sem selecione um fornecedor");
-            return null;
-        } else return entity;
+        let entityToSave = entity
+        entityToSave.cep = parseInt(entityToSave.cep)
+        entityToSave.telefone_celular = parseInt(entityToSave.telefone_celular);
+        entityToSave.id_fornecedor = parseInt(entityToSave.id_fornecedor);
+        return entityToSave;
+        
     }
 
     return (
@@ -78,7 +65,7 @@ export default function FormularioFornecedores() {
                 }}
             >
                 {" "}
-                <h1>Cadastro de fornecedor</h1>{" "}
+                <h1 className='title'>Cadastro de fornecedor</h1>{" "}
             </div>
             <GenericForm
                 fields={fields}
@@ -86,6 +73,7 @@ export default function FormularioFornecedores() {
                 idControl="id_fornecedor"
                 formatSaveEntity={formatToSave}
                 ignoreList={ignoreList}
+                customAutofill
             />
         </>
     );

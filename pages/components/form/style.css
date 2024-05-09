@@ -7,7 +7,8 @@
     justify-content: space-between; /* Espaçamento entre os itens */
 }
 
-.form-group .label {
+.label {
+    color: #FBFBFE;
     font-weight: bold;
     font-size: larger;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -15,6 +16,8 @@
 }
 
 .form-control, .select {
+    background-color:  #2B2A33;
+    color: #FBFBFE;
     height: 38px;
     width: fit-content; /* Ajustado para metade da largura com margem */
     border: 1px solid #726A5D;
@@ -24,6 +27,8 @@
 }
 
 .number, .tel {
+    color: #FBFBFE;
+    background-color:  #2B2A33;
     width:fit-content; /* Ajustado para um quarto da largura com margem */
     margin-right: 10px;
 }

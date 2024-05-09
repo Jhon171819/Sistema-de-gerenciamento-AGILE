@@ -10,9 +10,20 @@ export function gerarUuid(): string {
   });
 }
 
-export async function getCep(cep: number){
-  return axios.get(`https://viacep.com.br/ws/${cep}/json/`)
-  .catch(e => alert(e))
+
+
+export function getCep(cep: number): Promise<any> {
+    return fetch(`https://viacep.com.br/ws/${cep}/json/`)
+        .then(response => {
+            const data = response.data;
+            if (!data || data.erro) {
+                throw new Error('CEP não encontrado ou erro na resposta da API');
+            }
+            return data; // Retorna os dados recebidos da API
+        })
+        .catch(error => {
+            console.error('Erro na requisição:', error);
+        });
 }
 
 export async function getPartners(): Promise<any> {
