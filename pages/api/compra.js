@@ -12,10 +12,10 @@ export default async function handler(req, res) {
     }
   } else if (req.method === 'POST') {
     try {
-      const { id_compra, id_fornecedor, data_compra } = req.body;
+      const { id_compra, nome_compra, id_fornecedor, data_compra } = req.body;
 
       const novaCompra = await prisma.compra.create({
-        data: { id_compra, id_fornecedor, data_compra }
+        data: { id_compra, nome_compra, id_fornecedor, data_compra }
       });
       res.status(201).json(novaCompra);
     } catch (error) {

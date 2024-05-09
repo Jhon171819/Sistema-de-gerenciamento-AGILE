@@ -32,7 +32,7 @@ model Fornecedor {
   bairro           String
   cidade           String
   estado           String
-  cep              Int
+  cep              BigInt
   email            String
   telefone_celular BigInt
   produtos         Produto[]
@@ -42,7 +42,7 @@ model Fornecedor {
 model Cliente {
   id_cliente       Int     @id
   nome             String
-  cep              Int
+  cep              BigInt
   rua              String
   bairro           String
   cidade           String
@@ -54,6 +54,7 @@ model Cliente {
 
 model Compra {
   id_compra     Int          @id
+  nome_compra String
   id_fornecedor Int
   data_compra   String
   fornecedor    Fornecedor   @relation(fields: [id_fornecedor], references: [id_fornecedor])
@@ -67,11 +68,12 @@ model ItemCompra {
   valor_unitario Float
   quantidade     Int
   produto        Produto @relation(fields: [id_produto], references: [id_produto])
-  compra         Compra  @relation(fields: [id_compra], references: [id_compra])
+  compra         Compra  @relation(fields: [id_compra], references: [id_compra], onDelete: Cascade)
 }
 
 model Venda {
   id_venda    Int         @id
+  nome_venda String
   id_cliente  Int
   data_venda  String
   cliente     Cliente     @relation(fields: [id_cliente], references: [id_cliente])
@@ -85,5 +87,5 @@ model ItemVenda {
   valor_unitario Float
   quantidade     Int
   produto        Produto @relation(fields: [id_produto], references: [id_produto])
-  venda          Venda   @relation(fields: [id_venda], references: [id_venda])
+  venda          Venda   @relation(fields: [id_venda], references: [id_venda], onDelete: Cascade)
 }
