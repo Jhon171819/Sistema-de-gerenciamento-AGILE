@@ -122,7 +122,7 @@ export default function GenericForm({
                   variant="primary"
                   className="btn-primary"
                   onClick={() => {
-                      Object.keys(body).length === fields.length - ignoreList.length + 1
+                      Object.keys(body)?.length === ignoreList? fields.length - ignoreList.length + 1 : fields.length + 1
                           ? postObj({ ...formatSaveEntity(body) }, entity)
                           : lackingKeysError();
                   }}

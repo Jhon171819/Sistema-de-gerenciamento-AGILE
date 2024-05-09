@@ -74,8 +74,8 @@ export default function FormularioProdutos() {
             </div>
             <GenericForm
                 fields={fields}
-                entity={"fornecedores"}
-                idControl="id_fornecedor"
+                entity={"produtos"}
+                idControl="id_produto"
                 formatSaveEntity={formatToSave}
             />
         </>
