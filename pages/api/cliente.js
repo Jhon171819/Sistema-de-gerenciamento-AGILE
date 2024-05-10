@@ -6,24 +6,17 @@ export default async function handler(req, res) {
   if (req.method === 'GET') {
     try {
       const cliente = await prisma.cliente.findMany();
-      const serializedClientes = JSON.stringify(cliente, (key, value) =>
-        typeof value === 'bigint' ? value.toString() : value
-      );
-      res.status(200).json(JSON.parse(serializedClientes));
+    
+      res.status(200).json(JSON.parse(cliente));
     } catch (error) {
       res.status(500).json({ message: 'Erro ao buscar clientes', error: error.message });
     }
   } else if (req.method === 'POST') {
     try {
       const { id_cliente, nome, cep, rua, bairro, cidade, estado, email, telefone_celular } = req.body;
-      
-      JSON.stringify(
-        this,
-        (key, value) => (typeof value === 'bigint' ? value.toString() : value) 
-      )
 
       const novoCliente = await prisma.cliente.create({
-        data: { id_cliente, nome, cep, rua, bairro, cidade, estado, email, telefone_celular:BigInt(telefone_celular) }
+        data: { id_cliente, nome, cep, rua, bairro, cidade, estado, email, telefone_celular }
       });
       res.status(201).json(novoCliente);
     } catch (error) {

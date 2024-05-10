@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import Layout from "../components/layout";
-import FormularioItemCompra from "./formulario";
+import FormularioItemCompra from "./formulario/index.jsx";
 
 export default function Index() {
     return( 

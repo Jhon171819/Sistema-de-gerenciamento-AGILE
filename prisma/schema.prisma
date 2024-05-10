@@ -32,9 +32,9 @@ model Fornecedor {
   bairro           String
   cidade           String
   estado           String
-  cep              BigInt
+  cep              String
   email            String
-  telefone_celular BigInt
+  telefone_celular String
   produtos         Produto[]
   Compra           Compra[]
 }
@@ -42,13 +42,13 @@ model Fornecedor {
 model Cliente {
   id_cliente       Int     @id
   nome             String
-  cep              BigInt
+  cep              String
   rua              String
   bairro           String
   cidade           String
   estado           String
   email            String
-  telefone_celular BigInt
+  telefone_celular String
   Venda            Venda[]
 }
 

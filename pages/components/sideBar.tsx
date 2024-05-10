@@ -54,7 +54,7 @@ export default function SideBar(): JSX.Element {
           </a>
         </div>
         <div style={divStyle}>
-          <a href="/cadastroVendas/" className={styles.card}>
+          <a href="/cadastroItemVendas/" className={styles.card}>
              <span>Cadastro de Item de Vendas &rarr;</span>
           </a>
         </div>

@@ -6,24 +6,17 @@ export default async function handler(req, res) {
   if (req.method === 'GET') {
     try {
       const fornecedores = await prisma.fornecedor.findMany();
-      const serializedFornecedores = JSON.stringify(fornecedores, (key, value) =>
-        typeof value === 'bigint' ? value.toString() : value
-      );
-      res.status(200).json(JSON.parse(serializedFornecedores));
+      
+      res.status(200).json(JSON.parse(fornecedores));
     } catch (error) {
       res.status(500).json({ message: 'Erro ao buscar fornecedores', error: error.message });
     }
   } else if (req.method === 'POST') {
     try {
       const { id_fornecedor, nome_fornecedor, rua, bairro, cidade, estado, cep, email, telefone_celular } = req.body;
-      
-      JSON.stringify(
-        this,
-        (key, value) => (typeof value === 'bigint' ? value.toString() : value) 
-      )
 
       const novoFornecedor = await prisma.fornecedor.create({
-        data: { id_fornecedor, nome_fornecedor, rua, bairro, cidade, estado, cep, email, telefone_celular:BigInt(telefone_celular) }
+        data: { id_fornecedor, nome_fornecedor, rua, bairro, cidade, estado, cep, email, telefone_celular }
       });
       res.status(201).json(novoFornecedor);
     } catch (error) {

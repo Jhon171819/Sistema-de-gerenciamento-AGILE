@@ -35,26 +35,22 @@ export default function FormularioCompras() {
             label: "Selecionar Produto",
             type: "select",
             options: options,
-            style: styles.select,
             control: "id_produto",
         },
         {
             label: "Selecionar Venda",
             type: "select",
             options: optionsSells,
-            style: styles.select,
             control: "id_venda",
         },
         {
             label: "Valor Unitario",
             type: "number",
-            style: styles.select,
             control: "valor_unitario",
         },
         {
             label: "Quantidade",
             type: "number",
-            style: styles.select,
             control: "quantidade",
         },
 

@@ -8,6 +8,7 @@ import { gerarIdProdutoUnico, postObj } from "../../../utils/utils.ts";
 
 export default function GenericForm({
     fields,
+    value,
     entity,
     idControl,
     formatSaveEntity,
@@ -48,6 +49,7 @@ export default function GenericForm({
           if (type === "select" && options) {
               field = (
                   <Form.Select
+                      value={item.value? item.value : null} 
                       className={type}
                       onChange={(e) => handleChange(e.target.value, control)}
                   >

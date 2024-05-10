@@ -7,31 +7,27 @@ export default function FormularioFornecedores() {
         {
             label: "Nome do cliente",
             type: "text",
-            control: "nome_cliente",
+            control: "nome",
         },
         {
             label: "Rua do cliente",
             type: "text",
             control: "rua",
-            disabled: true,
         },
         {
             label: "Bairro do cliente",
             type: "text",
             control: "bairro",
-            disabled: true,
         },
         {
             label: "Cidade do cliente",
             type: "text",
             control: "cidade",
-            disabled: true,
         },
         {
             label: "Estado do cliente",
             type: "text",
             control: "estado",
-            disabled: true,
         },
         {
             label: "CEP do cliente",
@@ -52,20 +48,9 @@ export default function FormularioFornecedores() {
         },
     ];
     function formatToSave(entity) {
-        console.log(entity)
-        entity.cep = parseInt(entity.cep);
-        getCep(entity.cep).then((response) => {
-            entity.bairro = response.bairro
-            entity.cidade = response.localidade
-            entity.rua = response.logradouro
-            entity.estado = response.uf
-        })
-        entity.telefone_celular = parseInt(entity.telefone_celular);
-        entity.id_cliente = parseInt(entity.id_cliente);
-        if (!entity.id_cliente) {
-            alert("sem selecione um cliente");
-            return null;
-        } else return entity;
+        let entityToSave = entity
+        entityToSave.id_cliente = parseInt(entityToSave.id_cliente);
+        return entityToSave;
     }
 
     return (
@@ -78,7 +63,7 @@ export default function FormularioFornecedores() {
                 }}
             >
                 {" "}
-                <h1>Cadastro de Clientes</h1>{" "}
+                <h1 style={{color:"#FBFBFE"}}>Cadastro de clientes</h1>{" "}
             </div>
             <GenericForm
                 fields={fields}
@@ -86,6 +71,7 @@ export default function FormularioFornecedores() {
                 idControl="id_cliente"
                 formatSaveEntity={formatToSave}
                 ignoreList={ignoreList}
+                customAutofill
             />
         </>
     );
