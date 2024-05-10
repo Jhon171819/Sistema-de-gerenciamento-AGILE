@@ -59,11 +59,10 @@ export function gerarIdProdutoUnico() {
   generatedIds.add(id);
   return id;
 }
-export async function postObj(productData: Product, endPoint: "cliente" | "compra" | "fornecedores" | "itemCompra" | "itemVenda" | "produtos" | "venda"): Promise<void> {
+export async function postObj(productData: Record<string, unknown>, endPoint: "cliente" | "compra" | "fornecedores" | "itemCompra" | "itemVenda" | "produtos" | "venda"): Promise<void> {
   try {
-    const entity: Record<string, unknown> = {...productData}
     const resposta = await fetchData({ method: 'POST', data: productData, entity: endPoint });
-    console.log(resposta);
+    alert("Salvo com sucesso")
   } catch (error) {
     console.error('Erro ao realizar o POST:', error);
     throw error;
