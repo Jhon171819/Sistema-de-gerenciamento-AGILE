@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import GenericForm from "../../components/form";
+import GenericForm from "../../components/form/index.jsx";
 import styles from "./Formular.module.css";
 import { getProducts } from "../../../utils/utils.ts";
 import { getSells } from "../../../utils/utils.ts";
