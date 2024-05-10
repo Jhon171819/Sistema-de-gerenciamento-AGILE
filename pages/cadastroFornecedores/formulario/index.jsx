@@ -1,5 +1,4 @@
 import GenericForm from '../../components/form'
-import "./Formulario.module.css"
 export default function FormularioFornecedores() {
     const ignoreList = ["rua", "bairro", "cidade", "estado"]
     const fields = [
@@ -56,7 +55,7 @@ export default function FormularioFornecedores() {
     }
 
     return (
-        <>
+        <div >
             <div
                 style={{
                     display: "flex",
@@ -65,7 +64,7 @@ export default function FormularioFornecedores() {
                 }}
             >
                 {" "}
-                <h1 className='title'>Cadastro de fornecedor</h1>{" "}
+                <h1 style={{color:"#FBFBFE"}}>Cadastro de fornecedor</h1>{" "}
             </div>
             <GenericForm
                 fields={fields}
@@ -75,6 +74,6 @@ export default function FormularioFornecedores() {
                 ignoreList={ignoreList}
                 customAutofill
             />
-        </>
+        </div>
     );
 }

@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import GenericForm from "../../components/form";
-import styles from "./Formular.module.css";
 import { getPartners } from "../../../utils/utils.ts";
 
 export default function FormularioProdutos() {
@@ -21,33 +20,28 @@ export default function FormularioProdutos() {
         {
             label: "Nome do produto",
             type: "text",
-            style: styles.text,
             control: "nome_produto",
         },
         {
             label: "Selecionar fornecedor",
             type: "select",
             options: options,
-            style: styles.select,
             control: "id_fornecedor",
         },
         {
             label: "Quantidade em estoque",
             type: "number",
-            style: styles.number,
             control: "qtd_estoque",
         },
         {
             label: "Valor do produto",
             type: "number",
-            style: styles.number,
             prefix: "R$",
             control: "preco",
         },
         {
             label: "Descrição",
             type: "text",
-            style: styles.text,
             control: "descricao",
         },
     ];
