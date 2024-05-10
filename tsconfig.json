@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "pages/cadastroProdutos/formulario/index.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "pages/cadastroProdutos/formulario/index.jsx", "pages/storeManagement/storeManager.jsx", "pages/components/table/index.jsx"],
   "exclude": ["node_modules"]
 }

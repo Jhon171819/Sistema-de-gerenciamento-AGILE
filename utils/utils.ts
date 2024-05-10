@@ -69,15 +69,15 @@ export async function postObj(productData: Record<string, unknown>, endPoint: "c
   }
 }
 
-export async function getObj(item: string): Promise<any> {
+export async function getObj(entity: "cliente" | "compra" | "fornecedores" | "itemCompra" | "itemVenda" | "produtos" | "venda"): Promise<any> {
   try {
     const result = await fetchData({
-      method: 'GET', query: item,
-      entity: 'fornecedores'
+      method: 'GET',
+      entity: entity
     });
     return result;
   } catch (error) {
     console.error("Erro ao obter dados:", error);
-    throw error; // Re-throwing the error for handling elsewhere if needed
+    throw error; 
   }
 }
