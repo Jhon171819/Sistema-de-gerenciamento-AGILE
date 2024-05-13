@@ -16,11 +16,6 @@ export default async function handler(req, res) {
   } else if (req.method === 'POST') {
     try {
       const { id_fornecedor, nome_fornecedor, rua, bairro, cidade, estado, cep, email, telefone_celular } = req.body;
-      
-      JSON.stringify(
-        this,
-        (key, value) => (typeof value === 'bigint' ? value.toString() : value) 
-      )
 
       const novoFornecedor = await prisma.fornecedor.create({
         data: { id_fornecedor, nome_fornecedor, rua, bairro, cidade, estado, cep, email, telefone_celular:BigInt(telefone_celular) }

@@ -8,12 +8,12 @@ interface layoutProps {
 
 export default function Layout ({children}: layoutProps) {
     return(
-        <main className={styles.app}>
+        <div className={styles.app}>
         <div className={styles.sideBar}>
             <SideBar />
         </div>
         {children}
 
-        </main>
+        </div>
     )
 }

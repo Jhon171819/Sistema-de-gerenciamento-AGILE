@@ -1,69 +1,60 @@
+import { getCep } from '../../../utils/utils';
 import GenericForm from '../../components/form'
+
 export default function FormularioFornecedores() {
     const ignoreList = ["rua", "bairro", "cidade", "estado"]
     const fields = [
         {
-            label: "Nome do fornecedor",
+            label: "Nome do cliente",
             type: "text",
-            control: "nome_fornecedor",
+            control: "nome",
         },
         {
-            label: "Rua do fornecedor",
+            label: "Rua do cliente",
             type: "text",
             control: "rua",
         },
         {
-            label: "Bairro do fornecedor",
+            label: "Bairro do cliente",
             type: "text",
             control: "bairro",
         },
         {
-            label: "Cidade do fornecedor",
+            label: "Cidade do cliente",
             type: "text",
             control: "cidade",
         },
         {
-            label: "Estado do fornecedor",
+            label: "Estado do cliente",
             type: "text",
             control: "estado",
         },
         {
-            label: "CEP do fornecedor",
+            label: "CEP do cliente",
             type: "text",
             control: "cep",
             mask: "99999-999"
         },
         {
-            label: "E-mail do fornecedor",
+            label: "E-mail do cliente",
             type: "email",
             control: "email",
         },
         {
-            label: "Telefone celular do fornecedor",
+            label: "Telefone celular do cliente",
             type: "tel",
             size: 6,
             control: "telefone_celular",
         },
     ];
     function formatToSave(entity) {
-        console.log(entity)
-        entity.cep = parseInt(entity.cep);
-        getCep(entity.cep).then((response) => {
-            entity.bairro = response.bairro
-            entity.cidade = response.localidade
-            entity.rua = response.logradouro
-            entity.estado = response.uf
-        })
-        entity.telefone_celular = parseInt(entity.telefone_celular);
-        entity.id_fornecedor = parseInt(entity.id_fornecedor);
-        if (!entity.id_fornecedor) {
-            alert("sem selecione um fornecedor");
-            return null;
-        } else return entity;
+        let entityToSave = entity
+        entityToSave.id_cliente = parseInt(entityToSave.id_cliente);
+        return entityToSave;
     }
 
     return (
-        <div >
+        <>
             <div
                 style={{
                     display: "flex",
@@ -72,16 +63,16 @@ export default function FormularioFornecedores() {
                 }}
             >
                 {" "}
-                <h1 style={{color:"#FBFBFE"}}>Cadastro de fornecedor</h1>{" "}
+                <h1 style={{color:"#FBFBFE"}}>Cadastro de clientes</h1>{" "}
             </div>
             <GenericForm
                 fields={fields}
-                entity={"fornecedores"}
-                idControl="id_fornecedor"
+                entity={"cliente"}
+                idControl="id_cliente"
                 formatSaveEntity={formatToSave}
                 ignoreList={ignoreList}
                 customAutofill
             />
-        </div>
+        </>
     );
 }

@@ -36,6 +36,47 @@ export async function getPartners(): Promise<any> {
   }
 }
 
+export async function getProducts(): Promise<any> {
+  try {
+    const response = await fetchData({ method: 'GET', entity: 'produtos' });
+    return response;
+  } catch (error) {
+    console.error("Erro ao obter dados:", error);
+    throw error; // Re-throwing the error for handling elsewhere if needed
+  }
+}
+
+export async function getPurchases(): Promise<any> {
+  try {
+    const response = await fetchData({ method: 'GET', entity: 'compra' });
+    return response;
+  } catch (error) {
+    console.error("Erro ao obter dados:", error);
+    throw error; // Re-throwing the error for handling elsewhere if needed
+  }
+}
+
+export async function getClients(): Promise<any> {
+  try {
+    const response = await fetchData({ method: 'GET', entity: 'cliente' });
+    return response;
+  } catch (error) {
+    console.error("Erro ao obter dados:", error);
+    throw error; // Re-throwing the error for handling elsewhere if needed
+  }
+}
+
+export async function getSells(): Promise<any> {
+  try {
+    const response = await fetchData({ method: 'GET', entity: 'venda' });
+    return response;
+  } catch (error) {
+    console.error("Erro ao obter dados:", error);
+    throw error; // Re-throwing the error for handling elsewhere if needed
+  }
+}
+
+
 interface Product{
   id_produto: number;
   id_fornecedor: number;

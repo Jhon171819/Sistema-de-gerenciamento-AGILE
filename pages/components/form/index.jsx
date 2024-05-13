@@ -8,6 +8,7 @@ import { gerarIdProdutoUnico, getCep, postObj } from "../../../utils/utils.ts";
 
 export default function GenericForm({
     fields,
+    value,
     entity,
     idControl,
     formatSaveEntity,
