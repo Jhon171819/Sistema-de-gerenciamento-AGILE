@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import GenericForm from "../../components/form/index.jsx";
-import styles from "./Formular.module.css";
 import { getProducts } from "../../../utils/utils.ts";
 import { getPurchases } from "../../../utils/utils.ts";
 
@@ -35,26 +34,22 @@ export default function FormularioCompras() {
             label: "Selecionar Produto",
             type: "select",
             options: options,
-            style: styles.select,
             control: "id_produto",
         },
         {
             label: "Selecionar Compra",
             type: "select",
             options: optionsPurchase,
-            style: styles.select,
             control: "id_compra",
         },
         {
             label: "Valor Unitario",
             type: "number",
-            style: styles.select,
             control: "valor_unitario",
         },
         {
             label: "Quantidade",
             type: "number",
-            style: styles.select,
             control: "quantidade",
         },
 
