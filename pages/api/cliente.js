@@ -7,7 +7,7 @@ export default async function handler(req, res) {
     try {
       const cliente = await prisma.cliente.findMany();
     
-      res.status(200).json(JSON.parse(cliente));
+      res.status(200).json(cliente);
     } catch (error) {
       res.status(500).json({ message: 'Erro ao buscar clientes', error: error.message });
     }
