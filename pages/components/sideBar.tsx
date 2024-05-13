@@ -15,7 +15,7 @@ export default function SideBar(): JSX.Element {
     <><div>
       <div style={divStyle}>
         <a
-          href="https://github.com/Jhon171819"
+          href="https://github.com/Jhon171819/Cadastro_inventario"
           className={styles.card}
           target="_blank"
           rel="noopener noreferrer"
