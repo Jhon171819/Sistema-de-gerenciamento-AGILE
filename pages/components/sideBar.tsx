@@ -15,12 +15,11 @@ export default function SideBar(): JSX.Element {
     <><div>
       <div style={divStyle}>
         <a
-          href="https://github.com/Jhon171819/Cadastro_inventario"
+          href="/"
           className={styles.card}
-          target="_blank"
           rel="noopener noreferrer"
         >
-          <span>Github &rarr;</span>
+          <span>Tela inicial &rarr;</span>
         </a>
       </div>
       <div style={divStyle}>
