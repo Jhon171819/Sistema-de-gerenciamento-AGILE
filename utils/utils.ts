@@ -1,6 +1,4 @@
 import fetchData from '@/request';
-import { Decimal } from '@prisma/client/runtime/library';
-import axios from 'axios';
 
 export function gerarUuid(): string {
   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
@@ -10,21 +8,6 @@ export function gerarUuid(): string {
   });
 }
 
-
-
-export function getCep(cep: number): Promise<any> {
-    return fetch(`https://viacep.com.br/ws/${cep}/json/`)
-        .then(response => {
-            const data = response.data;
-            if (!data || data.erro) {
-                throw new Error('CEP não encontrado ou erro na resposta da API');
-            }
-            return data; // Retorna os dados recebidos da API
-        })
-        .catch(error => {
-            console.error('Erro na requisição:', error);
-        });
-}
 
 export async function getPartners(): Promise<any> {
   try {

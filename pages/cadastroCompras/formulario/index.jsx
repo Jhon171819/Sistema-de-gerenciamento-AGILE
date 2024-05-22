@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import GenericForm from "../../components/form";
-import styles from "./Formular.module.css";
 import { getPartners } from "../../../utils/utils.ts";
 
 export default function FormularioCompras() {
@@ -22,19 +21,16 @@ export default function FormularioCompras() {
             label: "Selecionar fornecedor",
             type: "select",
             options: options,
-            style: styles.select,
             control: "id_fornecedor",
         },
         {
             label: "Nome da compra",
             type: "text",
-            style: styles.select,
             control: "nome_compra",
         },
         {
             label: "Data da compra",
             type: "date",
-            style: styles.date,
             control: "data_compra",
         },
 

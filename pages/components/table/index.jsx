@@ -7,7 +7,6 @@ import './styles.css';
 
 class TableCustom extends Component {
   renderAcoes(objeto, index) {
-    // Aqui você pode adicionar as ações que desejar, como editar ou excluir
     return (
       <td key={`acao-${index}`}>
         acoes
@@ -20,7 +19,7 @@ class TableCustom extends Component {
   render() {
     const { data } = this.props;
 
-    if (!data.length) {
+    if (!data?.length) {
       return <div>Tabela vazia</div>;
     }
 

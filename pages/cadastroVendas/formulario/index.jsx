@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import GenericForm from "../../components/form";
-import styles from "./Formular.module.css";
 import { getClients } from "../../../utils/utils.ts";
 
 export default function FormularioVendas() {
@@ -22,19 +21,16 @@ export default function FormularioVendas() {
             label: "Selecionar cliente",
             type: "select",
             options: options,
-            style: styles.select,
             control: "id_cliente",
         },
         {
             label: "Nome da Venda",
             type: "text",
-            style: styles.select,
             control: "nome_venda",
         },
         {
             label: "Data da venda",
             type: "date",
-            style: styles.date,
             control: "data_venda",
         },
 
