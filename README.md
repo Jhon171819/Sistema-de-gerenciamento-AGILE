@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 📦 Sistema de Gerenciamento de Estoque, Venda e Compra de Produtos
 
-## Getting Started
+## 📄 Descrição
+Este projeto é um sistema de administração de estoque focado em gerenciamento interno. Ele permite o controle eficiente de produtos em estoque, além de gerenciar as operações de venda e compra. Com uma interface intuitiva e funcionalidades robustas, este sistema é ideal para pequenas e médias empresas que desejam melhorar sua gestão de inventário e transações comerciais.
 
-First, run the development server:
+## 🔧 Funcionalidades
+- **📦 Gerenciamento de Estoque:**
+  - 📌 Cadastro de produtos com detalhes como nome, descrição, categoria, preço, e quantidade em estoque.
+  - ✏️ Atualização de informações de produtos.
+  - 🔄 Controle de entrada e saída de produtos no estoque.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **🛒 Venda de Produtos:**
+  - 📝 Registro de vendas com informações do cliente, produtos vendidos e quantidade.
+  - 💰 Cálculo automático de total da venda.
+  - 📉 Atualização do estoque com base nas vendas realizadas.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **📥 Compra de Produtos:**
+  - 📑 Registro de compras com informações do fornecedor, produtos adquiridos e quantidade.
+  - 📈 Atualização automática do estoque com base nas compras realizadas.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **📊 Relatórios e Análises:**
+  - 📋 Geração de relatórios detalhados sobre estoque, vendas e compras.
+  - 📈 Análise de desempenho de vendas e movimentação de estoque.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 💻 Tecnologias Utilizadas
+- **Frontend:**
+  - 🌐 HTML, CSS, JavaScript
+  - 📚 Frameworks/Bibliotecas: React.js, Bootstrap
 
-## Learn More
+- **Backend:**
+  - 🖥️ Node.js, Express.js
+  - 🗄️ Banco de Dados: MongoDB
 
-To learn more about Next.js, take a look at the following resources:
+## 🚀 Instalação
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/seu-usuario/seu-repositorio.git
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. Navegue até o diretório do projeto:
+   ```bash
+   cd seu-repositorio
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+3. Instale as dependências do backend:
+   ```bash
+   cd backend
+   npm install
+   ```
 
-## Deploy on Vercel
+4. Inicie o servidor backend:
+   ```bash
+   npm start
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+5. Instale as dependências do frontend:
+   ```bash
+   cd ../frontend
+   npm install
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+6. Inicie o servidor frontend:
+   ```bash
+   npm start
+   ```
+
+## 📝 Uso
+1. Acesse o sistema através do navegador:
+   ```bash
+   http://localhost:3000
+   ```
+
+2. Utilize a interface para cadastrar produtos, registrar vendas e compras, e gerar relatórios.
+
+## 📬 Contato
+Para mais informações, entre em contato:
+- Email: jonathancosta1717@gmail.com
+- GitHub: Jhon171819
+
+---
