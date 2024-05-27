@@ -28,8 +28,8 @@ Este projeto é um sistema de administração de estoque focado em gerenciamento
   - 📚 Frameworks/Bibliotecas: React.js, Bootstrap
 
 - **Backend:**
-  - 🖥️ Node.js, Express.js
-  - 🗄️ Banco de Dados: MongoDB
+  - 🖥️ Node.js, Next.js
+  - 🗄️ Banco de Dados: Railway
 
 ## 🚀 Instalação
 1. Clone o repositório:
