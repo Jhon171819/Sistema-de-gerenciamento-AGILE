@@ -159,7 +159,7 @@ export default function GenericForm({
 
             <Button
                 variant="primary"
-                className="btn-primary"
+                className="btn"
                 onClick={() => {
                     if (Object.keys(body).length === fields.length + 1) {
                         postObj({ ...formatSaveEntity(body) }, entity);
