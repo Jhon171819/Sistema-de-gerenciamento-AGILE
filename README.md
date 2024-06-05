@@ -67,7 +67,7 @@ Este projeto é um sistema de administração de estoque focado em gerenciamento
 ## 📝 Uso
 1. Acesse o sistema através do navegador:
    ```bash
-   http://localhost:3000
+   http://localhost:3000](https://cadastro-inventario.vercel.app/
    ```
 
 2. Utilize a interface para cadastrar produtos, registrar vendas e compras, e gerar relatórios.
