@@ -11,7 +11,7 @@ export default function Home() {
       <div className={styles.center}>
         <Image
           className={styles.logo}
-          src="/caixa.svg"
+          src="https://static.vecteezy.com/ti/vetor-gratis/p2/10177741-abstract-initial-letter-a-and-g-logo-awesome-black-style-isolated-on-white-background-pro-vector-vetor.jpg"
           alt="Next.js Logo"
           width={180}
           height={37}
@@ -25,7 +25,7 @@ export default function Home() {
       <p>
             By {<a href="https://github.com/Jhon171819"   
             target="_blank"
-            rel="noopener noreferrer"> Jhon </a>
+            rel="noopener noreferrer"> Jonathan </a>
             }
             &  
             {<a href="http://github.com/renan-castro"

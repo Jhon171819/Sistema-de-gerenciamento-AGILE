@@ -12,6 +12,14 @@ export default function StoreManager() {
   const [data, setData] = useState([])
   const [entity, setEntity] = useState()
 
+  function editar(object){
+    window.location("/")
+  }
+
+  function excluir(object, index){
+    return console.log(object, index)
+  }
+
   useEffect(() => {
     getObj("produtos")
   },[])
@@ -26,7 +34,7 @@ export default function StoreManager() {
       <div>
         <div>
           <FormSelect onChange={(e) => setEntity(e.target.value)}>{entities.map(entity => (<option value={entity.value}>{entity.label}</option>))}</FormSelect>
-        {!data ? null : <TableCustom data={data} />}
+        {!data ? null : <TableCustom data={data} excluirItem={excluir} />}
         </div>
       </div>
     </div>

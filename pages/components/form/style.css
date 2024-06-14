@@ -1,10 +1,10 @@
 .Form {
     display: flex;
-    flex-direction: column; /* Alterado de column para row */
-    flex-wrap: wrap; /* Permite que os itens sejam envolvidos em várias linhas */
-    align-items: center; /* Alinha os itens ao início do contêiner */
-    max-width: 100%; /* Ajustado para ocupar a largura total */
-    justify-content: space-between; /* Espaçamento entre os itens */
+    flex-direction: column; 
+    flex-wrap: wrap; 
+    align-items: center; 
+    max-width: 100%; 
+    justify-content: space-between; 
 }
 
 .label {
@@ -19,7 +19,7 @@
     background-color:  #2B2A33;
     color: #FBFBFE;
     height: 38px;
-    width: fit-content; /* Ajustado para metade da largura com margem */
+    width: fit-content; 
     border: 1px solid #726A5D;
     padding: 6px 12px;
     margin-bottom: 10px;
@@ -29,7 +29,7 @@
 .number, .tel {
     color: #FBFBFE;
     background-color:  #2B2A33;
-    width:fit-content; /* Ajustado para um quarto da largura com margem */
+    width:fit-content; 
     margin-right: 10px;
 }
 
@@ -43,7 +43,7 @@ padding: 10px 30px;
 border: 2px solid #0066cc;
 box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
 border-radius: 50px;
-transition : 2391ms;
+transition : 100ms;
 transform: translateY(0);
 display: flex;
 flex-direction: row;
@@ -53,7 +53,7 @@ cursor: pointer;
 }
 
 .btn:hover{
-transition : 2391ms;
+transition : 100ms;
 padding: 10px 50px;
 transform : translateY(-0px);
 background: linear-gradient(90deg, #100454 0%, #c500cc 100%);
