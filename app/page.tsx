@@ -11,7 +11,7 @@ export default function Home() {
       <div className={styles.center}>
         <Image
           className={styles.logo}
-          src="https://static.vecteezy.com/ti/vetor-gratis/p2/10177741-abstract-initial-letter-a-and-g-logo-awesome-black-style-isolated-on-white-background-pro-vector-vetor.jpg"
+          src="/caixa.svg"
           alt="Next.js Logo"
           width={180}
           height={37}
