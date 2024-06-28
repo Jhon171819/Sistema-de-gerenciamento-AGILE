@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import Table from 'react-bootstrap/Table';
 import './styles.css';
 
-// Definindo a interface para as props do componente
-// (Você precisará definir essa interface se estiver usando TypeScript)
-
 class TableCustom extends Component {
   renderAcoes(objeto, index) {
     return (

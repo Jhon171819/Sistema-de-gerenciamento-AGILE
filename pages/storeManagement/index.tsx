@@ -1,9 +1,10 @@
 import StoreManager from './storeManager'
-import Layout from '../components/layout'
+import styles from "./storeManager.module.css"
 export default function Index() {
     return (
-        <Layout>
-          <StoreManager />
-        </Layout>
+      <div className={styles.layout}>
+        <StoreManager />
+      </div>
+      
     )
 }
