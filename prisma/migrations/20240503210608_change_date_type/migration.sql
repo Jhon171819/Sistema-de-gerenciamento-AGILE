@@ -1,5 +1,5 @@
 -- AlterTable
-ALTER TABLE `Compra` MODIFY `data_compra` VARCHAR(191) NOT NULL;
+ALTER TABLE "Compra" ALTER COLUMN "data_compra" TYPE VARCHAR(191) USING "data_compra"::VARCHAR(191);
 
 -- AlterTable
-ALTER TABLE `Venda` MODIFY `data_venda` VARCHAR(191) NOT NULL;
+ALTER TABLE "Venda" ALTER COLUMN "data_venda" TYPE VARCHAR(191) USING "data_venda"::VARCHAR(191);

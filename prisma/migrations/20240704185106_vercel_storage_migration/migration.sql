@@ -1,0 +1,49 @@
+-- AlterTable
+ALTER TABLE "Cliente" ALTER COLUMN "id_cliente" DROP DEFAULT,
+ALTER COLUMN "nome" SET DATA TYPE TEXT,
+ALTER COLUMN "cep" SET DATA TYPE TEXT,
+ALTER COLUMN "rua" SET DATA TYPE TEXT,
+ALTER COLUMN "bairro" SET DATA TYPE TEXT,
+ALTER COLUMN "cidade" SET DATA TYPE TEXT,
+ALTER COLUMN "estado" SET DATA TYPE TEXT,
+ALTER COLUMN "email" SET DATA TYPE TEXT,
+ALTER COLUMN "telefone_celular" SET DATA TYPE TEXT;
+DROP SEQUENCE "Cliente_id_cliente_seq";
+
+-- AlterTable
+ALTER TABLE "Compra" ALTER COLUMN "id_compra" DROP DEFAULT,
+ALTER COLUMN "data_compra" SET DATA TYPE TEXT,
+ALTER COLUMN "nome_compra" SET DATA TYPE TEXT;
+DROP SEQUENCE "Compra_id_compra_seq";
+
+-- AlterTable
+ALTER TABLE "Fornecedor" ALTER COLUMN "id_fornecedor" DROP DEFAULT,
+ALTER COLUMN "nome_fornecedor" SET DATA TYPE TEXT,
+ALTER COLUMN "rua" SET DATA TYPE TEXT,
+ALTER COLUMN "bairro" SET DATA TYPE TEXT,
+ALTER COLUMN "cidade" SET DATA TYPE TEXT,
+ALTER COLUMN "estado" SET DATA TYPE TEXT,
+ALTER COLUMN "cep" SET DATA TYPE TEXT,
+ALTER COLUMN "email" SET DATA TYPE TEXT,
+ALTER COLUMN "telefone_celular" SET DATA TYPE TEXT;
+DROP SEQUENCE "Fornecedor_id_fornecedor_seq";
+
+-- AlterTable
+ALTER TABLE "ItemCompra" ALTER COLUMN "id_item_compra" DROP DEFAULT;
+DROP SEQUENCE "ItemCompra_id_item_compra_seq";
+
+-- AlterTable
+ALTER TABLE "ItemVenda" ALTER COLUMN "id_item_venda" DROP DEFAULT;
+DROP SEQUENCE "ItemVenda_id_item_venda_seq";
+
+-- AlterTable
+ALTER TABLE "Produto" ALTER COLUMN "id_produto" DROP DEFAULT,
+ALTER COLUMN "nome_produto" SET DATA TYPE TEXT,
+ALTER COLUMN "descricao" SET DATA TYPE TEXT;
+DROP SEQUENCE "Produto_id_produto_seq";
+
+-- AlterTable
+ALTER TABLE "Venda" ALTER COLUMN "id_venda" DROP DEFAULT,
+ALTER COLUMN "data_venda" SET DATA TYPE TEXT,
+ALTER COLUMN "nome_venda" SET DATA TYPE TEXT;
+DROP SEQUENCE "Venda_id_venda_seq";
