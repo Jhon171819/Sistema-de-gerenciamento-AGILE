@@ -1,7 +1,9 @@
 -- AlterTable
-ALTER TABLE `Cliente` MODIFY `cep` VARCHAR(191) NOT NULL,
-    MODIFY `telefone_celular` VARCHAR(191) NOT NULL;
+ALTER TABLE "Cliente"
+    ALTER COLUMN "cep" TYPE VARCHAR(191) USING "cep"::VARCHAR(191),
+    ALTER COLUMN "telefone_celular" TYPE VARCHAR(191) USING "telefone_celular"::VARCHAR(191);
 
 -- AlterTable
-ALTER TABLE `Fornecedor` MODIFY `cep` VARCHAR(191) NOT NULL,
-    MODIFY `telefone_celular` VARCHAR(191) NOT NULL;
+ALTER TABLE "Fornecedor"
+    ALTER COLUMN "cep" TYPE VARCHAR(191) USING "cep"::VARCHAR(191),
+    ALTER COLUMN "telefone_celular" TYPE VARCHAR(191) USING "telefone_celular"::VARCHAR(191);

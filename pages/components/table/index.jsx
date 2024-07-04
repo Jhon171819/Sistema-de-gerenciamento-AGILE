@@ -1,6 +1,7 @@
-import React, { Component } from "react";
-import Table from "react-bootstrap/Table";
-import "./styles.css";
+import React, { Component } from 'react';
+import Table from 'react-bootstrap/Table';
+import './styles.css';
+
 class TableCustom extends Component {
     render() {
         const { data, excluirItem, editarItem } = this.props;

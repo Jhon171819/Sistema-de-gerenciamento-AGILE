@@ -1,5 +1,5 @@
 -- AlterTable
-ALTER TABLE `Cliente` MODIFY `cep` BIGINT NOT NULL;
+ALTER TABLE "Cliente" ALTER COLUMN "cep" TYPE BIGINT USING "cep"::BIGINT;
 
 -- AlterTable
-ALTER TABLE `Fornecedor` MODIFY `cep` BIGINT NOT NULL;
+ALTER TABLE "Fornecedor" ALTER COLUMN "cep" TYPE BIGINT USING "cep"::BIGINT;
