@@ -22,23 +22,19 @@ class TableCustom extends Component {
                     </tr>
                 </thead>
                 <tbody>
-                    {data.map((objeto, index) => (
-                        <tr key={index}>
+                    {data.map((objeto) => (
+                        <tr key={objeto.id}> {/* Substitua 'id' pelo identificador único do seu objeto */}
                             {cabecalhos.map((chave) => (
-                                <td key={`${index}-${chave}`}>
+                                <td key={`${objeto.id}-${chave}`}>
                                     {objeto[chave]}
                                 </td>
                             ))}
-                            <td key={`acao-${index}`}>
-                                    <a onClick={() =>
-                                        this.editarItem(objeto, index)
-                                    }><i class="bi bi-pencil-square"></i></a>
-
-                                <a
-                                    onClick={() =>
-                                        excluirItem(objeto, index)
-                                    }
-                                >
+                            <td>
+                                <a onClick={() => editarItem(objeto)}>
+                                    <i className="bi bi-pencil-square"></i>
+                                </a>
+                                {' '}
+                                <a onClick={() => excluirItem(objeto)}>
                                     Excluir
                                 </a>
                             </td>

@@ -33,7 +33,7 @@ model Fornecedor {
   bairro           String
   cidade           String
   estado           String
-  cep              String
+  cep              BigInt
   email            String
   telefone_celular String
   produtos         Produto[]
@@ -43,7 +43,7 @@ model Fornecedor {
 model Cliente {
   id_cliente       Int     @id
   nome             String
-  cep              String
+  cep              BigInt
   rua              String
   bairro           String
   cidade           String

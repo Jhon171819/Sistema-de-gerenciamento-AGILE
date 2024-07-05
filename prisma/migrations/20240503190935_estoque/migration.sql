@@ -11,6 +11,14 @@ CREATE TABLE "Fornecedor" (
     "telefone_celular" BIGINT NOT NULL
 );
 
+INSERT INTO "Fornecedor" ("nome_fornecedor", "rua", "bairro", "cidade", "estado", "cep", "email", "telefone_celular") VALUES
+('Fornecedor A', 'Rua Um', 'Bairro A', 'Cidade A', 'Estado A', 12345678, 'contato@fornecedorA.com', 11912345678),
+('Fornecedor B', 'Rua Dois', 'Bairro B', 'Cidade B', 'Estado B', 23456789, 'contato@fornecedorB.com', 21912345678),
+('Fornecedor C', 'Rua Três', 'Bairro C', 'Cidade C', 'Estado C', 34567890, 'contato@fornecedorC.com', 31912345678),
+('Fornecedor D', 'Rua Quatro', 'Bairro D', 'Cidade D', 'Estado D', 45678901, 'contato@fornecedorD.com', 41912345678),
+('Fornecedor E', 'Rua Cinco', 'Bairro E', 'Cidade E', 'Estado E', 56789012, 'contato@fornecedorE.com', 51912345678);
+
+
 -- CreateTable
 CREATE TABLE "Produto" (
     "id_produto" SERIAL PRIMARY KEY,

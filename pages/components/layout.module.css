@@ -29,7 +29,9 @@
     position: fixed;
     z-index: 10;
     transition-duration: 0.5s;
-    border-radius: 20px;
+    border-radius: 15px;
+    border-right: 1px;
+    border-top: 1px;
     border-color: #cc255d;
     --callout-rgb: 238, 240, 241;
     --callout-border-rgb: 172, 175, 176;

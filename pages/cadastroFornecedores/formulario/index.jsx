@@ -40,7 +40,7 @@ export default function FormularioFornecedores() {
         },
         {
             label: "Telefone celular do fornecedor",
-            type: "tel",
+            type: "text",
             size: 6,
             control: "telefone_celular",
         },
@@ -48,13 +48,9 @@ export default function FormularioFornecedores() {
     function formatToSave(entity) {
         console.log(entity)
         entity.cep = parseInt(entity.cep);
-        getCep(entity.cep).then((response) => {
-            entity.bairro = response.bairro
-            entity.cidade = response.localidade
-            entity.rua = response.logradouro
-            entity.estado = response.uf
-        })
-        entity.telefone_celular = parseInt(entity.telefone_celular);
+        entity.telefone_celular = String(entity.telefone_celular)
+        console.log(typeof entity.telefone_celular)
+        // entity.telefone_celular = parseInt(entity.telefone_celular);
         entity.id_fornecedor = parseInt(entity.id_fornecedor);
         if (!entity.id_fornecedor) {
             alert("sem selecione um fornecedor");
@@ -63,7 +59,7 @@ export default function FormularioFornecedores() {
     }
 
     return (
-        <div >
+        <div>
             <div
                 style={{
                     display: "flex",

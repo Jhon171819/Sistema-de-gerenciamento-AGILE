@@ -10,7 +10,7 @@
     "variaveis": "next vercel env pull .env.development.local"
   },
   "dependencies": {
-    "@prisma/client": "^5.13.0",
+    "@prisma/client": "^5.16.1",
     "@vercel/postgres": "^0.9.0",
     "axios": "^1.6.8",
     "babel": "^6.23.0",
@@ -29,7 +29,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "prisma": "^5.13.0",
+    "prisma": "^5.16.1",
     "typescript": "^5"
   }
 }

@@ -28,11 +28,12 @@ export default async function fetchData(config: {
   
       const response = await fetch(url, requestOptions);
   
-      if (!response.ok) {
-        throw new Error(
-          `Erro na requisição: ${response.status} - ${response.statusText}`
-        );
-      }
+      // if (!response.ok) {
+      //   console.log(response)
+      //   throw new Error(
+      //     `Erro na requisição: ${response.status} - ${response.statusText}`
+      //   );
+      // }
   
       return await response.json();
     } catch (error) {

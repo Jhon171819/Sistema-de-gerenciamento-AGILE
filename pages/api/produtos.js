@@ -16,6 +16,7 @@ export default async function handler(req, res) {
       const novoProduto = await prisma.produto.create({
         data: { id_produto, id_fornecedor, nome_produto, descricao, qtd_estoque, preco }
       });
+      console.log(typeof novoProduto.id_fornecedor)
       res.status(201).json(novoProduto);
     } catch (error) {
       res.status(400).json({ message: 'Erro ao criar novo produto', error: error.message });

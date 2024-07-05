@@ -18,7 +18,7 @@ export default async function handler(req, res) {
       const { id_fornecedor, nome_fornecedor, rua, bairro, cidade, estado, cep, email, telefone_celular } = req.body;
 
       const novoFornecedor = await prisma.fornecedor.create({
-        data: { id_fornecedor, nome_fornecedor, rua, bairro, cidade, estado, cep, email, telefone_celular:BigInt(telefone_celular) }
+        data: { id_fornecedor, nome_fornecedor, rua, bairro, cidade, estado, cep, email, telefone_celular }
       });
       res.status(201).json(novoFornecedor);
     } catch (error) {
