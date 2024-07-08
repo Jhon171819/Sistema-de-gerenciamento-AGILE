@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import fetchData from "@/request";
 import { getObj } from "@/utils/utils";
 import { FormSelect } from "react-bootstrap";
+import TableV2 from "../components/table_v2";
 
 
 
@@ -33,8 +34,8 @@ export default function StoreManager() {
     <div>
       <div>
         <div>
-          <FormSelect onChange={(e) => setEntity(e.target.value)}>{entities.map(entity => (<option value={entity.value}>{entity.label}</option>))}</FormSelect>
-        {!data ? null : <TableCustom data={data} excluirItem={excluir} />}
+          <FormSelect className={styles.select} onChange={(e) => setEntity(e.target.value)}>{entities.map(entity => (<option value={entity.value}>{entity.label}</option>))}</FormSelect>
+        {!data ? null : <TableV2 data={data} excluirItem={excluir} />}
         </div>
       </div>
     </div>

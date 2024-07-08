@@ -19,7 +19,12 @@
     color: whitesmoke;
     align-items: center;
 } */
-
+.select{
+    background-color: transparent !important;
+    color: rgb(0, 0, 0);
+    border-color: transparent !important;
+    border-radius: 10%;
+}
 
 
 .layout{
@@ -27,7 +32,7 @@
     top: 0;
     bottom: 0;
     height: 100vh;
-    background: linear-gradient(to bottom left, #000000 0%, #563d61 100%);  
+    background: linear-gradient(to bottom left, #180bd6 0%, #563d61 100%);  
     position: fixed;
     margin-left: -8px;
     margin-top: 0px;

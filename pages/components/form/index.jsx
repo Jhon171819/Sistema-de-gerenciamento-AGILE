@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import InputMask from "react-input-mask";
 import Form from "react-bootstrap/Form";
-import { Col, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import "./style.css";
 import { gerarIdProdutoUnico, getCep, postObj } from "../../../utils/utils.ts";
 
@@ -145,6 +145,7 @@ export default function GenericForm({
 
             counter++;
             if (counter % 2 === 0 || fields.length === counter) {
+                console.log("deveria estar dividindo", counter)
                 newRows.push(<Row key={counter}>{currentRow}</Row>);
                 currentRow = [];
             }
@@ -152,10 +153,10 @@ export default function GenericForm({
 
         setRows(newRows);
     }, [body, fields]);
-
+    
     return (
         <Form className="Form">
-            <div className="container">{rows}</div>
+            <Container className="container">{rows}</Container>
 
             <Button
                 variant="primary"

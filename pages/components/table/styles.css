@@ -1,10 +1,10 @@
 .table {
-    border-left: 10px;
-    border: 1;
-    color:rgb(255, 255, 255);
-    border-color: rgb(255, 255, 255);
+  margin-top: 10px;
+  border-left: 10px;
+  color:rgb(0, 0, 0);
+  border-color: rgb(243, 240, 240);
 }
 .table-spacing td,
 .table-spacing th {
-  padding: 20px; /* Ajuste o valor conforme necessário */
+  padding: 60px; /* Ajuste o valor conforme necessário */
 }
