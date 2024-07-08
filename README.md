@@ -29,17 +29,17 @@ Este projeto é um sistema de administração de estoque focado em gerenciamento
 
 - **Backend:**
   - 🖥️ Node.js, Next.js
-  - 🗄️ Banco de Dados: Railway
+  - 🗄️ Banco de Dados: Vercel Storage
 
 ## 🚀 Instalação
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
+   git clone https://github.com/Jhon171819/Sistema-de-gerenciamento-AGILE.git
    ```
 
 2. Navegue até o diretório do projeto:
    ```bash
-   cd seu-repositorio
+   cd Sistema-de-gerenciamento-AGILE
    ```
 
 3. Instale as dependências do backend:
