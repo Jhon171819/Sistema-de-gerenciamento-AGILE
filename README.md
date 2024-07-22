@@ -42,26 +42,9 @@ Este projeto é um sistema de administração de estoque focado em gerenciamento
    cd Sistema-de-gerenciamento-AGILE
    ```
 
-3. Instale as dependências do backend:
+3. Instale as dependências:
    ```bash
-   cd backend
    npm install
-   ```
-
-4. Inicie o servidor backend:
-   ```bash
-   npm start
-   ```
-
-5. Instale as dependências do frontend:
-   ```bash
-   cd ../frontend
-   npm install
-   ```
-
-6. Inicie o servidor frontend:
-   ```bash
-   npm start
    ```
 
 ## 📝 Uso
