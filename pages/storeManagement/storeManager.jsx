@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import fetchData from "@/request";
 import { getObj } from "@/utils/utils";
 import { FormSelect } from "react-bootstrap";
+import { customFilter, FILTER_TYPES } from "react-bootstrap-table2-filter";
+
 
 
 
@@ -16,13 +18,13 @@ export default function StoreManager() {
   const generateColumns = (data) => {
     if (data.length === 0) return [];
   
-    const keys = Object.keys(data[0]);
+    const keys = ["nome_produto", "descricao", "qtd_estoque", "preco", "id_fornecedor"];
     const columns = keys.map(key => ({
-      sort: true,
       dataField: key,
-      text: key.charAt(0).toUpperCase() + key.slice(1),
-      filter: {
-        type: FILTER_TYPES.TEXT
+      text: key.replace(/_/g, ' ').replace(/\b\w/g, char => char.toUpperCase()), // Capitalize and replace underscores
+      sort: true,
+      filter: key !== 'id_fornecedor' && {
+        type: key === 'qtd_estoque' || key === 'preco' ? FILTER_TYPES.NUMBER : FILTER_TYPES.TEXT
       }
     }));
   
@@ -30,16 +32,18 @@ export default function StoreManager() {
     columns.push({
       dataField: "actions",
       text: "Ações",
+      isDummyField: true,
       formatter: (cell, row) => (
-        <button className="btn btn-primary" onClick={() => alert(`Action on row with id ${row.id}`)}>
+        <button className="btn btn-primary" onClick={() => alert(`Action on row with id ${row.id_fornecedor}`)}>
           Action
         </button>
-      ),
-      isDummyField: true
+      )
     });
   
     return columns;
   };
+  
+  
 
   useEffect(() => {
     getObj("produtos")
@@ -50,7 +54,7 @@ export default function StoreManager() {
     }
   },[entity])  
   const columns = generateColumns(data);
-  console.log(columns)
+  console.log(generateColumns(data))
   return (
     <div>
       <div>
