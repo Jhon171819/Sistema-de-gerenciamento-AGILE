@@ -1,5 +1,4 @@
 # 📦 Sistema de Gerenciamento de Estoque, Venda e Compra de Produtos
-
 ## 📄 Descrição
 Este projeto é um sistema de administração de estoque focado em gerenciamento interno. Ele permite o controle eficiente de produtos em estoque, além de gerenciar as operações de venda e compra. Com uma interface intuitiva e funcionalidades robustas, este sistema é ideal para pequenas e médias empresas que desejam melhorar sua gestão de inventário e transações comerciais.
 
